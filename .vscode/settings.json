@@ -1,0 +1,13 @@
+{
+    "python.pythonPath": "C:\\Users\\user\\.virtualenvs\\user-KgVmIwbj\\Scripts\\python.exe",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./framework",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": true
+}
