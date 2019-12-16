@@ -51,7 +51,7 @@ class ZhuCeCeShi(unittest.TestCase, zhuce, zhuce_zj, Exp):
     #     #self.assertTrue(exp.input_error('//*[@id="password"]', 'class'), msg='没有提示')
     #     _element(_path='/html/body/div[4]', _getfor=True, _searchfor='style')
     def test_login(self):
-        RunTest(2).run_test()
+        RunTest(2).run_123()
 
 if __name__ == '__main__':
     #print(readConf())

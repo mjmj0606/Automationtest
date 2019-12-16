@@ -16,7 +16,7 @@ class GetSql(object):
 
         :return: 提取测试用例
         """
-        return self._selectlist('select element, motion, text from element where title = %s' % value)
+        return list(self._selectlist('select element, motion, text from element where title = %s' % value))
 
     def select_num(self,value):
         """最大行数"""
@@ -34,29 +34,29 @@ class GetSql(object):
         else:
             return '有错误数据'
 
-    def package_list(self, value):
-
-        """
-
-        :return:组装测试用例信息
-        """
-        nrow = self.select_num(value)
-        #nrow = select_num(value)
-        a = self.change_select(value)
-        for x in range(0, int(nrow)):
-            for y in range(0, len(a[0])):
-                yield a[x][y]
+    # def package_list(self, value):
+    #
+    #     """
+    #
+    #     :return:组装测试用例信息
+    #     """
+    #     nrow = self.select_num(value)
+    #     #nrow = select_num(value)
+    #     a = self.change_select(value)
+    #     for x in range(0, int(nrow)):
+    #         for y in range(0, len(a[0])):
+    #             yield a[x][y]
         # for x, y in zip(range(0, int(nrow)), range(0, len(a[0]))):
         #     yield a[x][y]
 
-    def test_date(self, value):
-        """
-
-        :param value:用例标记
-        :return: 元素未知列表
-        """
-        for i in [list(self.package_list(value))[i:i+3] for i in range(0, len(list(self.package_list(value))), 3)]:
-            yield i
+    # def test_date(self, value):
+    #     """
+    #
+    #     :param value:用例标记
+    #     :return: 元素未知列表
+    #     """
+    #     for i in [list(self.package_list(value))[i:i+3] for i in range(0, len(list(self.package_list(value))), 3)]:
+    #         yield i
 
 
 # a = GetSql().package_list(1)
@@ -65,3 +65,4 @@ class GetSql(object):
 #         print(a.__next__())
 #     except:
 #         break
+#print(GetSql().change_select(1)[0][0])
